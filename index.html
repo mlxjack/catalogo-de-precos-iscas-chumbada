@@ -514,10 +514,10 @@
   </main>
 
   <script>
-    // DADOS ATUALIZADOS com array 'categories' para aceitar múltiplas categorias por isca
+    // DADOS ATUALIZADOS com as categorias corrigidas e filtro Linha Aji Inteligente
     const products = [
       {
-        name: "Batelouca", categories: ["Soft Baits"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Batelouca-01.jpg?v=1739354819", link: "https://chumbadas.com.br/products/kit-isca-artificial-batelouca?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Batelouca", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Batelouca-01.jpg?v=1739354819", link: "https://chumbadas.com.br/products/kit-isca-artificial-batelouca?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "7cm - 4un", price: "R$ 12,80"}, {desc: "9cm - 2un", price: "R$ 16,00"}, {desc: "11cm - 2un", price: "R$ 19,20"}], 
         kit20: [{desc: "7cm", price: "R$ 60,80"}, {desc: "9cm", price: "R$ 100,80"}, {desc: "11cm", price: "R$ 192,00"}], 
         kit100: [{desc: "7cm", price: "R$ 267,52"}, {desc: "9cm", price: "R$ 668,80"}, {desc: "11cm", price: "R$ 802,56"}]
@@ -541,7 +541,7 @@
         kit100: [{desc: "7cm", price: "R$ 133,01"}, {desc: "11cm", price: "R$ 304,00"}]
       },
       {
-        name: "Boom Paddle", categories: ["Soft Baits", "Shads"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Boom-Paddle-verde-neon-14cm_e8e7343f-455a-45d5-a6fe-b18555093122.jpg?v=1739467179", link: "https://chumbadas.com.br/products/kit-isca-artificial-boom-padlle?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Boom Paddle", categories: ["Shads"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Boom-Paddle-verde-neon-14cm_e8e7343f-455a-45d5-a6fe-b18555093122.jpg?v=1739467179", link: "https://chumbadas.com.br/products/kit-isca-artificial-boom-padlle?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "8cm - 4un", price: "R$ 11,20"}, {desc: "10cm - 3un", price: "R$ 16,00"}, {desc: "12cm - 2un", price: "R$ 19,20"}, {desc: "14cm - 1un", price: "R$ 14,40"}, {desc: "16cm - 1un", price: "R$ 20,80"}, {desc: "18cm - 1un", price: "R$ 20,80"}, {desc: "20cm - 1un", price: "R$ 24,00"}], 
         kit20: [{desc: "8cm", price: "R$ 53,20"}, {desc: "10cm", price: "R$ 101,33"}, {desc: "12cm", price: "R$ 182,40"}, {desc: "14cm", price: "R$ 243,20"}, {desc: "16cm", price: "R$ 273,60"}, {desc: "18cm", price: "R$ 395,20"}, {desc: "20cm", price: "R$ 456,00"}], 
         kit100: [{desc: "8cm", price: "R$ 239,41"}, {desc: "10cm", price: "R$ 456,00"}, {desc: "12cm", price: "R$ 820,80"}, {desc: "14cm", price: "R$ 1.094,40"}, {desc: "16cm", price: "R$ 1.231,20"}, {desc: "18cm", price: "R$ 1.778,40"}, {desc: "20cm", price: "R$ 2.052,00"}]
@@ -559,25 +559,25 @@
         kit100: [{desc: "5cm", price: "R$ 171,01"}, {desc: "7cm", price: "R$ 228,00"}, {desc: "9cm", price: "R$ 410,40"}]
       },
       {
-        name: "Dança D'água", categories: ["Soft Baits", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/danca-dagua-veu-da-noite_748be433-400e-4160-ba8a-c8e914902af5.png?v=1725027112", link: "https://chumbadas.com.br/products/kit-isca-artificial-danca-d-agua?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Dança D'água", categories: ["Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/danca-dagua-veu-da-noite_748be433-400e-4160-ba8a-c8e914902af5.png?v=1725027112", link: "https://chumbadas.com.br/products/kit-isca-artificial-danca-d-agua?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 4un", price: "R$ 8,00"}, {desc: "9cm - 3un", price: "R$ 8,00"}, {desc: "12cm - 2un", price: "R$ 12,80"}], 
         kit20: [{desc: "6cm", price: "R$ 38,00"}, {desc: "9cm", price: "R$ 50,67"}, {desc: "12cm", price: "R$ 121,60"}], 
         kit100: [{desc: "6cm", price: "R$ 171,01"}, {desc: "9cm", price: "R$ 228,00"}, {desc: "12cm", price: "R$ 547,20"}]
       },
       {
-        name: "Serelepe", categories: ["Soft Baits", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Serelepe-roxo-estrelar.jpg?v=1748540026", link: "https://chumbadas.com.br/products/kit-isca-artificial-serelepe?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Serelepe", categories: ["Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Serelepe-roxo-estrelar.jpg?v=1748540026", link: "https://chumbadas.com.br/products/kit-isca-artificial-serelepe?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5cm - 8un", price: "R$ 12,00"}, {desc: "7cm - 4un", price: "R$ 8,00"}, {desc: "9cm - 4un", price: "R$ 12,00"}], 
         kit20: [{desc: "5cm", price: "R$ 28,50"}, {desc: "7cm", price: "R$ 38,00"}, {desc: "9cm", price: "R$ 57,01"}], 
         kit100: [{desc: "5cm", price: "R$ 128,26"}, {desc: "7cm", price: "R$ 171,01"}, {desc: "9cm", price: "R$ 256,50"}]
       },
       {
-        name: "Sapo Estica", categories: ["Frogs", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/sapo-estica-capa.jpg?v=1745504234", link: "https://chumbadas.com.br/products/isca-artificial-sapo-estica?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Sapo Estica", categories: ["Frogs"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/sapo-estica-capa.jpg?v=1745504234", link: "https://chumbadas.com.br/products/isca-artificial-sapo-estica?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 4un", price: "R$ 9,60"}, {desc: "8cm - 3un", price: "R$ 10,40"}, {desc: "10cm - 2un", price: "R$ 11,20"}], 
         kit20: [{desc: "6cm", price: "R$ 45,60"}, {desc: "8cm", price: "R$ 65,87"}, {desc: "10cm", price: "R$ 106,40"}], 
         kit100: [{desc: "6cm", price: "R$ 205,20"}, {desc: "8cm", price: "R$ 296,40"}, {desc: "10cm", price: "R$ 478,80"}]
       },
       {
-        name: "Viper Bug", categories: ["Creatures", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/viper-bug.png?v=1778179031", link: "https://chumbadas.com.br/products/isca-artificial-viperbug-20un?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Viper Bug", categories: ["Creatures"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/viper-bug.png?v=1778179031", link: "https://chumbadas.com.br/products/isca-artificial-viperbug-20un?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5.5cm - 4un", price: "R$ 12,80"}, {desc: "7.5cm - 4un", price: "R$ 16,00"}, {desc: "9.5cm - 2un", price: "R$ 16,00"}], 
         kit20: [{desc: "5.5cm", price: "R$ 60,80"}, {desc: "7.5cm", price: "R$ 76,00"}, {desc: "9.5cm", price: "R$ 152,00"}], 
         kit100: [{desc: "5.5cm", price: "R$ 273,60"}, {desc: "7.5cm", price: "R$ 342,00"}, {desc: "9.5cm", price: "R$ 684,00"}]
@@ -595,7 +595,7 @@
         kit100: [{desc: "10cm", price: "R$ 456,00"}, {desc: "14cm", price: "R$ 923,41"}]
       },
       {
-        name: "Mini Paddle", categories: ["Soft Baits", "Linha Aji", "Shads"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/mini-paddle_a5f883d8-2239-4994-8915-1aa269d61966.png?v=1778179160", link: "https://chumbadas.com.br/products/kit-isca-artificial-mini-paddle?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Mini Paddle", categories: ["Linha Aji", "Shads"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/mini-paddle_a5f883d8-2239-4994-8915-1aa269d61966.png?v=1778179160", link: "https://chumbadas.com.br/products/kit-isca-artificial-mini-paddle?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "3cm - 12un", price: "R$ 14,40"}, {desc: "4.5cm - 9un", price: "R$ 14,40"}, {desc: "6cm - 6un", price: "R$ 14,40"}], 
         kit20: [{desc: "3cm", price: "R$ 22,80"}, {desc: "4.5cm", price: "R$ 30,40"}, {desc: "6cm", price: "R$ 45,60"}], 
         kit100: [{desc: "3cm", price: "R$ 102,61"}, {desc: "4.5cm", price: "R$ 136,80"}, {desc: "6cm", price: "R$ 205,20"}]
@@ -607,7 +607,7 @@
         kit100: [{desc: "5cm", price: "R$ 136,80"}, {desc: "7cm", price: "R$ 205,20"}]
       },
       {
-        name: "Easy Drift", categories: ["Soft Baits"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/easey.png?v=1778179315", link: "https://chumbadas.com.br/products/kit-isca-artificial-easy-drift?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Easy Drift", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/easey.png?v=1778179315", link: "https://chumbadas.com.br/products/kit-isca-artificial-easy-drift?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "7cm - 6un", price: "R$ 14,40"}, {desc: "10cm - 4un", price: "R$ 14,40"}, {desc: "13cm - 3un", price: "R$ 14,40"}], 
         kit20: [{desc: "7cm", price: "R$ 45,60"}, {desc: "10cm", price: "R$ 68,40"}, {desc: "13cm", price: "R$ 91,20"}], 
         kit100: [{desc: "7cm", price: "R$ 205,20"}, {desc: "10cm", price: "R$ 307,81"}, {desc: "13cm", price: "R$ 410,40"}]
@@ -625,7 +625,7 @@
         kit100: [{desc: "3.5cm", price: "R$ 91,20"}, {desc: "5cm", price: "R$ 171,01"}]
       },
       {
-        name: "GFluke", categories: ["Soft Baits", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/gfluke-prod.jpg?v=1765826003", link: "https://chumbadas.com.br/products/kit-isca-artificial-gfluke?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "GFluke", categories: ["Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/gfluke-prod.jpg?v=1765826003", link: "https://chumbadas.com.br/products/kit-isca-artificial-gfluke?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 5un", price: "R$ 23,84"}, {desc: "8cm - 5un", price: "R$ 27,04"}, {desc: "10cm - 5un", price: "R$ 30,24"}], 
         kit20: [{desc: "6cm", price: "R$ 79,84"}, {desc: "8cm", price: "R$ 87,84"}, {desc: "10cm", price: "R$ 95,84"}], 
         kit100: [{desc: "6cm", price: "R$ 367,84"}, {desc: "8cm", price: "R$ 399,84"}, {desc: "10cm", price: "R$ 431,84"}]
@@ -637,13 +637,13 @@
         kit100: [{desc: "11cm", price: "R$ 342,00"}, {desc: "14cm", price: "R$ 427,50"}]
       },
       {
-        name: "Lagartail", categories: ["Creatures", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagartail-prod.jpg?v=1765823799", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagartail?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Lagartail", categories: ["Creatures"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagartail-prod.jpg?v=1765823799", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagartail?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 6un", price: "R$ 12,80"}, {desc: "9cm - 4un", price: "R$ 12,80"}, {desc: "12cm - 2un", price: "R$ 12,80"}], 
         kit20: [{desc: "6cm", price: "R$ 40,53"}, {desc: "9cm", price: "R$ 60,80"}, {desc: "12cm", price: "R$ 121,60"}], 
         kit100: [{desc: "6cm", price: "R$ 182,40"}, {desc: "9cm", price: "R$ 273,60"}, {desc: "12cm", price: "R$ 547,20"}]
       },
       {
-        name: "Morceguinho", categories: ["Creatures", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/morceguinho2.jpg?v=1755529787", link: "https://chumbadas.com.br/products/kit-isca-artificial-morceguinho?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Morceguinho", categories: ["Creatures"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/morceguinho2.jpg?v=1755529787", link: "https://chumbadas.com.br/products/kit-isca-artificial-morceguinho?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5cm - 6un", price: "R$ 12,80"}, {desc: "7cm - 4un", price: "R$ 12,80"}, {desc: "9cm - 2un", price: "R$ 12,80"}], 
         kit20: [{desc: "5cm", price: "R$ 40,53"}, {desc: "7cm", price: "R$ 60,80"}, {desc: "9cm", price: "R$ 121,60"}], 
         kit100: [{desc: "5cm", price: "R$ 182,40"}, {desc: "7cm", price: "R$ 273,60"}, {desc: "9cm", price: "R$ 547,20"}]
@@ -655,7 +655,7 @@
         kit100: [{desc: "4.5cm", price: "R$ 119,70"}, {desc: "5.5cm", price: "R$ 239,41"}]
       },
       {
-        name: "SnakeTail", categories: ["Worms", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/SnakeTail.png?v=1757342823", link: "https://chumbadas.com.br/products/kit-isca-artificial-snaketail?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "SnakeTail", categories: ["Worms"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/SnakeTail.png?v=1757342823", link: "https://chumbadas.com.br/products/kit-isca-artificial-snaketail?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5cm - 6un", price: "R$ 11,20"}, {desc: "7.5cm - 4un", price: "R$ 12,80"}, {desc: "10cm - 3un", price: "R$ 16,00"}], 
         kit20: [{desc: "5cm", price: "R$ 35,47"}, {desc: "7.5cm", price: "R$ 60,80"}, {desc: "10cm", price: "R$ 101,33"}], 
         kit100: [{desc: "5cm", price: "R$ 159,60"}, {desc: "7.5cm", price: "R$ 273,60"}, {desc: "10cm", price: "R$ 456,00"}]
@@ -667,7 +667,7 @@
         kit100: [{desc: "6cm", price: "R$ 159,60"}, {desc: "9cm", price: "R$ 182,40"}, {desc: "12cm", price: "R$ 273,60"}]
       },
       {
-        name: "Folha", categories: ["Soft Baits"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/folha.jpg?v=1757526781", link: "https://chumbadas.com.br/products/kit-isca-artificial-folha?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Folha", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/folha.jpg?v=1757526781", link: "https://chumbadas.com.br/products/kit-isca-artificial-folha?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "8cm - 4un", price: "R$ 12,80"}, {desc: "11cm - 2un", price: "R$ 12,80"}], 
         kit20: [{desc: "8cm", price: "R$ 60,80"}, {desc: "11cm", price: "R$ 121,60"}], 
         kit100: [{desc: "8cm", price: "R$ 273,60"}, {desc: "11cm", price: "R$ 547,20"}]
@@ -703,13 +703,13 @@
         kit100: [{desc: "8cm", price: "R$ 128,26"}, {desc: "11cm", price: "R$ 256,50"}, {desc: "14cm", price: "R$ 273,60"}]
       },
       {
-        name: "LegFrog", categories: ["Frogs", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/legfrog-capa.jpg?v=1757532378", link: "https://chumbadas.com.br/products/kit-isca-artificial-legfrog?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "LegFrog", categories: ["Frogs"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/legfrog-capa.jpg?v=1757532378", link: "https://chumbadas.com.br/products/kit-isca-artificial-legfrog?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 3un", price: "R$ 11,20"}, {desc: "8cm - 2un", price: "R$ 12,80"}], 
         kit20: [{desc: "6cm", price: "R$ 70,93"}, {desc: "8cm", price: "R$ 121,60"}], 
         kit100: [{desc: "6cm", price: "R$ 319,20"}, {desc: "8cm", price: "R$ 547,20"}]
       },
       {
-        name: "Lagostim", categories: ["Camarões", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagostim-capa.png?v=1757600481", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagostim?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Lagostim", categories: ["Camarões"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagostim-capa.png?v=1757600481", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagostim?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 6un", price: "R$ 16,00"}, {desc: "8cm - 3un", price: "R$ 16,00"}], 
         kit20: [{desc: "6cm", price: "R$ 50,67"}, {desc: "8cm", price: "R$ 101,33"}], 
         kit100: [{desc: "6cm", price: "R$ 228,00"}, {desc: "8cm", price: "R$ 456,00"}]
@@ -757,25 +757,25 @@
         kit100: [{desc: "4.5cm", price: "R$ 159,60"}]
       },
       {
-        name: "Double Grub", categories: ["Grubs", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/doble-grub-capa.png?v=1760720949", link: "https://chumbadas.com.br/products/kit-isca-artificial-double-grub?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Double Grub", categories: ["Grubs"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/doble-grub-capa.png?v=1760720949", link: "https://chumbadas.com.br/products/kit-isca-artificial-double-grub?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 6un", price: "R$ 11,20"}, {desc: "8cm - 4un", price: "R$ 12,80"}], 
         kit20: [{desc: "6cm", price: "R$ 35,47"}, {desc: "8cm", price: "R$ 60,80"}], 
         kit100: [{desc: "6cm", price: "R$ 159,60"}, {desc: "8cm", price: "R$ 273,60"}]
       },
       {
-        name: "Claw Strike", categories: ["Creatures", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/claw-strike-prod.jpg?v=1765822353", link: "https://chumbadas.com.br/products/kit-isca-artificial-claw-strike?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Claw Strike", categories: ["Creatures"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/claw-strike-prod.jpg?v=1765822353", link: "https://chumbadas.com.br/products/kit-isca-artificial-claw-strike?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5cm - 6un", price: "R$ 9,60"}, {desc: "7cm - 4un", price: "R$ 11,20"}], 
         kit20: [{desc: "5cm", price: "R$ 30,40"}, {desc: "7cm", price: "R$ 53,20"}], 
         kit100: [{desc: "5cm", price: "R$ 136,80"}, {desc: "7cm", price: "R$ 239,41"}]
       },
       {
-        name: "Lagartixa", categories: ["Creatures", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagartixa-prod.jpg?v=1765822516", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagartixa?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Lagartixa", categories: ["Creatures"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagartixa-prod.jpg?v=1765822516", link: "https://chumbadas.com.br/products/kit-isca-artificial-lagartixa?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 6un", price: "R$ 10,40"}, {desc: "8cm - 4un", price: "R$ 12,00"}], 
         kit20: [{desc: "6cm", price: "R$ 32,93"}, {desc: "8cm", price: "R$ 57,01"}], 
         kit100: [{desc: "6cm", price: "R$ 148,21"}, {desc: "8cm", price: "R$ 256,50"}]
       },
       {
-        name: "Wave Grub", categories: ["Grubs", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/wave-grub-capa.png?v=1778180298", link: "https://chumbadas.com.br/products/kit-isca-artificial-wave-grub?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Wave Grub", categories: ["Grubs"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/wave-grub-capa.png?v=1778180298", link: "https://chumbadas.com.br/products/kit-isca-artificial-wave-grub?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "5.5cm - 6un", price: "R$ 16,00"}, {desc: "7.5cm - 4un", price: "R$ 20,00"}], 
         kit20: [{desc: "5.5cm", price: "R$ 50,67"}, {desc: "7.5cm", price: "R$ 95,01"}], 
         kit100: [{desc: "5.5cm", price: "R$ 228,00"}, {desc: "7.5cm", price: "R$ 427,50"}]
@@ -799,7 +799,7 @@
         kit100: [{desc: "5.5cm", price: "R$ 307,81"}, {desc: "7.5cm", price: "R$ 296,40"}]
       },
       {
-        name: "Belly Fluke", categories: ["Soft Baits", "Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/belly_fluke.jpg?v=1761834864", link: "https://chumbadas.com.br/products/kit-isca-artificial-belly-fluke?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Belly Fluke", categories: ["Linha Aji"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/belly_fluke.jpg?v=1761834864", link: "https://chumbadas.com.br/products/kit-isca-artificial-belly-fluke?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "6cm - 6un", price: "R$ 8,00"}, {desc: "9cm - 6un", price: "R$ 16,00"}, {desc: "12cm - 4un", price: "R$ 14,40"}], 
         kit20: [{desc: "6cm", price: "R$ 25,33"}, {desc: "9cm", price: "R$ 50,67"}, {desc: "12cm", price: "R$ 68,40"}], 
         kit100: [{desc: "6cm", price: "R$ 114,00"}, {desc: "9cm", price: "R$ 228,00"}, {desc: "12cm", price: "R$ 307,81"}]
@@ -853,13 +853,13 @@
         kit100: [{desc: "4.5cm", price: "R$ 188,78"}, {desc: "6cm", price: "R$ 169,30"}, {desc: "7.5cm", price: "R$ 304,38"}]
       },
       {
-        name: "Linguado", categories: ["Soft Baits"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/linguado-capa.png?v=1776350311", link: "https://chumbadas.com.br/products/isca-artificial-linguado?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Linguado", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/linguado-capa.png?v=1776350311", link: "https://chumbadas.com.br/products/isca-artificial-linguado?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "8cm - 4un", price: "R$ 19,20"}, {desc: "11cm - 2un", price: "R$ 19,20"}], 
         kit20: [{desc: "8cm", price: "R$ 91,20"}, {desc: "11cm", price: "R$ 182,40"}], 
         kit100: [{desc: "8cm", price: "R$ 410,40"}, {desc: "11cm", price: "R$ 820,80"}]
       },
       {
-        name: "Bubble Tube", categories: ["Soft Baits"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/03_2879f24b-6861-4d7f-ab31-fc637d1f2b9d.jpg?v=1778164148", link: "https://chumbadas.com.br/products/isca-artificial-bubble-tube?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        name: "Bubble Tube", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/03_2879f24b-6861-4d7f-ab31-fc637d1f2b9d.jpg?v=1778164148", link: "https://chumbadas.com.br/products/isca-artificial-bubble-tube?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "7.5cm - 3un", price: "R$ 22,00"}], 
         kit20: [{desc: "7.5cm", price: "R$ 139,33"}], 
         kit100: [{desc: "7.5cm", price: "R$ 627,00"}]
@@ -871,7 +871,7 @@
     const chips = document.getElementById('chips');
     const count = document.getElementById('count');
     
-    // Gerar categorias dinamicamente desestruturando os arrays
+    // Gerar categorias dinamicamente
     const categories = ['Todos', ...Array.from(new Set(products.flatMap(p => p.categories)))];
     let activeCategory = 'Todos';
 
@@ -914,12 +914,34 @@
       });
     }
 
-    // RENDERIZAR O GRID GERAL
+    // RENDERIZAR O GRID GERAL E APLICAR LÓGICAS INTELIGENTES
     function render() {
       const term = searchInput.value.trim().toLowerCase();
       
-      const filtered = products.filter(product => {
-        // Junta os dados pra busca funcionar com nome ou preço
+      // 1. Aplicar a lógica de esconder tamanhos > 6cm caso a categoria ativa seja 'Linha Aji'
+      const processedProducts = products.map(product => {
+        const p = { ...product }; // Clona o produto para exibir na tela
+        
+        if (activeCategory === 'Linha Aji') {
+          // Função que checa se o tamanho da isca é menor ou igual a 6cm
+          const isAjiSize = (item) => {
+            const match = item.desc.match(/^([\d.]+)\s*cm/i);
+            return match ? parseFloat(match[1]) <= 6 : true;
+          };
+          p.packs = p.packs.filter(isAjiSize);
+          p.kit20 = p.kit20.filter(isAjiSize);
+          p.kit100 = p.kit100.filter(isAjiSize);
+        }
+        return p;
+      });
+
+      // 2. Filtrar pelos menus e pela barra de busca
+      const filtered = processedProducts.filter(product => {
+        // Ignora o produto se após o filtro Aji ele não sobrar nenhum tamanho visível
+        if (activeCategory === 'Linha Aji' && product.packs.length === 0 && product.kit20.length === 0 && product.kit100.length === 0) {
+            return false;
+        }
+
         const textToSearch = [
           product.name, 
           ...product.categories, 
@@ -928,7 +950,6 @@
           ...product.kit100.map(i => i.desc + " " + i.price)
         ].join(' ').toLowerCase();
 
-        // Checagem atualizada de categorias com array
         const matchCategory = activeCategory === 'Todos' || product.categories.includes(activeCategory);
         const matchTerm = textToSearch.includes(term);
 
@@ -949,7 +970,8 @@
       grid.innerHTML = filtered.map(product => `
         <article class="card">
           <div class="photo">
-            <div class="cat">${product.categories[0]}</div>
+            <!-- Caso um produto fique sem categoria, exibe a tag Soft Bait visualmente para não quebrar o layout -->
+            <div class="cat">${product.categories.length > 0 ? product.categories[0] : 'Soft Bait'}</div>
             <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/f4f4f5/9ca3af?text=Sem+Foto'">
           </div>
           <div class="body">
