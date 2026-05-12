@@ -335,6 +335,30 @@
       letter-spacing: 0.1em;
       border-radius: 4px;
     }
+    
+    .badge-new {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      background: linear-gradient(45deg, #ff1100, #ff5500);
+      color: var(--white);
+      padding: 6px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(255, 85, 0, 0.4);
+      animation: pulse-badge 2s infinite;
+      z-index: 20;
+    }
+
+    @keyframes pulse-badge {
+      0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(255, 85, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+    }
 
     .photo img {
       max-width: 100%;
@@ -516,6 +540,12 @@
   <script>
     // DADOS ATUALIZADOS com as categorias corrigidas e filtro Linha Aji Inteligente
     const products = [
+      {
+        name: "Bubble Tube", categories: [], isNew: true, image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/03_2879f24b-6861-4d7f-ab31-fc637d1f2b9d.jpg?v=1778164148", link: "https://chumbadas.com.br/products/isca-artificial-bubble-tube?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        packs: [{desc: "7.5cm - 3un", price: "R$ 22,00"}], 
+        kit20: [{desc: "7.5cm", price: "R$ 139,33"}], 
+        kit100: [{desc: "7.5cm", price: "R$ 627,00"}]
+      },
       {
         name: "Batelouca", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Batelouca-01.jpg?v=1739354819", link: "https://chumbadas.com.br/products/kit-isca-artificial-batelouca?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
         packs: [{desc: "7cm - 4un", price: "R$ 12,80"}, {desc: "9cm - 2un", price: "R$ 16,00"}, {desc: "11cm - 2un", price: "R$ 19,20"}], 
@@ -859,10 +889,10 @@
         kit100: [{desc: "8cm", price: "R$ 410,40"}, {desc: "11cm", price: "R$ 820,80"}]
       },
       {
-        name: "Bubble Tube", categories: [], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/files/03_2879f24b-6861-4d7f-ab31-fc637d1f2b9d.jpg?v=1778164148", link: "https://chumbadas.com.br/products/isca-artificial-bubble-tube?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
-        packs: [{desc: "7.5cm - 3un", price: "R$ 22,00"}], 
-        kit20: [{desc: "7.5cm", price: "R$ 139,33"}], 
-        kit100: [{desc: "7.5cm", price: "R$ 627,00"}]
+        name: "Anteninha Átomo", categories: ["Acessórios para Iscas"], image: "https://cdn.shopify.com/s/files/1/0454/5845/6736/products/anteninha-preta.jpg?v=1701355183", link: "https://chumbadas.com.br/products/kit-anteninha-2-unidades?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web", 
+        packs: [{desc: "2un", price: "R$ 5,00"}], 
+        kit20: [], 
+        kit100: []
       }
     ];
 
@@ -972,6 +1002,7 @@
           <div class="photo">
             <!-- Caso um produto fique sem categoria, exibe a tag Soft Bait visualmente para não quebrar o layout -->
             <div class="cat">${product.categories.length > 0 ? product.categories[0] : 'Soft Bait'}</div>
+            ${product.isNew ? '<div class="badge-new">Lançamento</div>' : ''}
             <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/f4f4f5/9ca3af?text=Sem+Foto'">
           </div>
           <div class="body">
