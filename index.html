@@ -95,6 +95,39 @@
       transform: skewX(-10deg);
     }
 
+    .back-nav {
+      margin-bottom: 24px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .back-link:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: translateX(-4px);
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
     .hero-content {
       margin-top: 50px;
       display: flex;
@@ -507,6 +540,14 @@
   
   <header class="hero">
     <div class="wrap">
+      <div class="back-nav">
+        <a href="https://mlxjack.github.io/cat-logos-chumbada-oficial/#catalogos" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Todos os Catálogos
+        </a>
+      </div>
       <div class="topbar">
         <img class="logo" src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/CHUMBADA-OFICIAL.png?v=1756760093" alt="Chumbada Oficial">
         <div class="badge-top">Catálogo Oficial</div>
