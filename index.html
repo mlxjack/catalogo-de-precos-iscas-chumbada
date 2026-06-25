@@ -68,6 +68,7 @@
       align-items: center;
       gap: 30px;
       width: 100%;
+      flex-wrap: wrap;
     }
     .header-bottom-row {
       width: 100%;
@@ -76,12 +77,19 @@
 
     .brand-section {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
       border-bottom: none;
       padding-bottom: 0;
       flex-shrink: 0;
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
     }
 
     .dashboard-logo {
@@ -89,16 +97,25 @@
       align-self: flex-start;
     }
 
-    .system-label {
+    .back-link {
       font-family: 'Inter', sans-serif;
       font-size: 11px;
       letter-spacing: 0.1em;
       color: var(--text-muted);
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .back-link svg {
+      width: 12px;
+      height: 12px;
+    }
+    .back-link:hover {
+      color: var(--orange);
     }
 
     .dashboard-title {
@@ -120,8 +137,9 @@
       flex-direction: column;
       gap: 8px;
       flex-grow: 1;
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 450px;
+      margin: 0;
+      justify-content: flex-end;
     }
 
     .panel-label {
@@ -609,11 +627,16 @@
     <header class="control-center">
       <div class="header-top-row">
         <div class="brand-section">
-          <a href="https://mlxjack.github.io/cat-logos-chumbada-oficial/#catalogos" style="text-decoration:none;">
-            <div class="system-label"><span>VOLTAR AO INÍCIO</span></div>
+          <a href="https://mlxjack.github.io/cat-logos-chumbada-oficial/#catalogos" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            VOLTAR AO INÍCIO
           </a>
-          <img class="dashboard-logo" src="assets/images/CHUMBADA-OFICIAL.png" alt="Chumbada Oficial">
-          <h2 class="dashboard-title">CATÁLOGO // <span>PRODUTOS</span></h2>
+          <div class="brand-title-wrap">
+            <img class="dashboard-logo" src="assets/images/CHUMBADA-OFICIAL.png" alt="Chumbada Oficial">
+            <h2 class="dashboard-title">CATÁLOGO // <span>PRODUTOS</span></h2>
+          </div>
         </div>
 
         <div class="search-panel">
