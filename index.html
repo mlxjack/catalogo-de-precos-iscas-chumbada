@@ -11,21 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,800;0,900;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <style>
+
     :root {
-      --orange: #ff5500;
-      --orange-glow: rgba(255, 85, 0, 0.45);
-      --orange-dim: rgba(255, 85, 0, 0.15);
-      --bg-deep: #050508;
-      --bg-panel: #0b0b10;
-      --bg-module: #101017;
-      --border-dim: #1e1e2d;
-      --border-bright: #ff5500;
-      --text-main: #f1f5f9;
-      --text-muted: #64748b;
-      --neon-cyan: #00f0ff;
-      --neon-cyan-glow: rgba(0, 240, 255, 0.35);
-      --neon-green: #39ff14;
-      --white: #ffffff;
+      --orange: #FF5500;
+      --bg-deep: #F8F9FA;
+      --bg-panel: #FFFFFF;
+      --bg-module: #FFFFFF;
+      --border-dim: #E2E8F0;
+      --border-bright: #FF5500;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --accent-color: #000000;
+      --white: #FFFFFF;
       --sidebar-width: 380px;
     }
     
@@ -41,153 +38,98 @@
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      /* Grid de Sonar Futurista */
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 85, 0, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.02) 0%, transparent 45%),
-        linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
     }
 
-    /* --- LAYOUT DE CENTRAL TÃTICA --- */
     .dashboard {
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
       width: 100vw;
     }
 
-    /* --- PAINEL LATERAL (CONTROLE) --- */
     .control-center {
-      width: var(--sidebar-width);
+      width: 100%;
       background-color: var(--bg-panel);
-      border-right: 2px solid var(--border-dim);
-      padding: 35px 25px;
+      border-bottom: 1px solid var(--border-dim);
+      padding: 20px 40px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      position: fixed;
+      gap: 20px;
+      position: sticky;
       top: 0;
-      bottom: 0;
-      left: 0;
-      overflow-y: auto;
       z-index: 100;
-      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-
-    /* Sonar Radar sweep background animation */
-    .control-center::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, transparent, var(--orange), transparent);
-      animation: scan-bar 5s linear infinite;
-      pointer-events: none;
+    .header-top-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
     }
-
-    @keyframes scan-bar {
-      0% { top: 0; opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { top: 100%; opacity: 0; }
+    .header-bottom-row {
+      width: 100%;
     }
+    
 
     .brand-section {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      border-bottom: 1px solid var(--border-dim);
-      padding-bottom: 20px;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      border-bottom: none;
+      padding-bottom: 0;
+      flex-shrink: 0;
     }
 
     .dashboard-logo {
-      height: 55px;
+      height: 45px;
       align-self: flex-start;
-      filter: drop-shadow(0 0 15px var(--orange-glow));
     }
 
     .system-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--orange);
-      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
       text-transform: uppercase;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .system-label::before {
-      content: "";
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background-color: var(--orange);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--orange);
-      animation: pulse-dot 1.5s infinite;
-    }
-
-    @keyframes pulse-dot {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.4); opacity: 0.5; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
     .dashboard-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 900;
       text-transform: uppercase;
-      font-style: italic;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--white);
+      color: var(--accent-color);
     }
 
     .dashboard-title span {
       color: var(--orange);
     }
 
-    /* SeÃ§Ãµes de DiagnÃ³sticos */
-    .diagnostic-panel {
-      background: rgba(255, 255, 255, 0.01);
-      border: 1px solid var(--border-dim);
-      border-radius: 4px;
-      padding: 12px 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .diagnostic-line {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .diagnostic-line span.status-active {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 8px var(--neon-cyan-glow);
-    }
-
-    /* Pesquisa TÃ¡tica */
     .search-panel {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .panel-label {
       font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 900;
+      font-size: 13px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-main);
+      letter-spacing: 0.05em;
+      color: var(--accent-color);
     }
 
     .search-station {
@@ -197,240 +139,189 @@
 
     .search-station svg {
       position: absolute;
-      left: 14px;
+      left: 16px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
 
     .search-input {
       width: 100%;
-      height: 46px;
-      background: #12121b;
+      height: 50px;
+      background: var(--bg-deep);
       border: 1px solid var(--border-dim);
-      border-radius: 4px;
-      padding: 0 16px 0 42px;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      color: var(--white);
+      border-radius: 8px;
+      padding: 0 16px 0 46px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-main);
       outline: none;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     .search-input:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 15px rgba(255, 85, 0, 0.25);
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+      background: var(--white);
     }
 
-    /* Radar Channels (Filtros de Categoria) */
     .radar-channels {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      border-top: 1px solid var(--border-dim);
-      padding-top: 20px;
+      width: 100%;
     }
 
     .channel-btn {
       background: transparent;
-      border: 1px solid transparent;
-      padding: 12px 16px;
-      border-radius: 4px;
-      text-align: left;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
+      border: 1px solid var(--border-dim);
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
       color: var(--text-muted);
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      justify-content: space-between;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      justify-content: center;
       align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .channel-btn::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 0; bottom: 0; width: 0;
-      background: var(--orange-dim);
-      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: -1;
     }
 
     .channel-btn:hover {
-      color: var(--text-main);
-      border-color: var(--border-dim);
-    }
-
-    .channel-btn:hover::before {
-      width: 100%;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+      background: var(--bg-deep);
     }
 
     .channel-btn.active {
       color: var(--white);
-      border-color: var(--orange);
-      background: rgba(255, 85, 0, 0.05);
-      box-shadow: inset 0 0 10px rgba(255, 85, 0, 0.1);
+      background: var(--accent-color);
+      border-color: var(--accent-color);
     }
 
-    .channel-btn.active::before {
-      width: 100%;
-      background: rgba(255, 85, 0, 0.08);
-    }
-
-    .channel-btn .channel-indicator {
-      width: 6px;
-      height: 6px;
+    .channel-indicator {
+      width: 8px;
+      height: 8px;
       background: transparent;
       border-radius: 50%;
+      transition: background 0.2s;
     }
 
     .channel-btn.active .channel-indicator {
       background: var(--orange);
-      box-shadow: 0 0 8px var(--orange);
     }
 
-    /* --- GRADE DE ISCAS (ÃREA PRINCIPAL) --- */
     .tactical-grid-area {
-      margin-left: var(--sidebar-width);
-      width: calc(100% - var(--sidebar-width));
-      padding: 50px 40px;
+      margin-left: 0;
+      width: 100%;
+      padding: 40px 50px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .top-telemetry-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
-      border-bottom: 1px solid var(--border-dim);
-      padding-bottom: 15px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid var(--border-dim);
+      padding-bottom: 20px;
     }
 
     .results-telemetry {
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      color: var(--neon-cyan);
-      text-shadow: 0 0 8px var(--neon-cyan-glow);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
     }
 
-    /* --- CARD TÃTICO --- */
     .lure-module {
       background: var(--bg-module);
       border: 1px solid var(--border-dim);
-      border-radius: 6px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .lure-module::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--orange), var(--neon-cyan));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
 
     .lure-module:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255, 85, 0, 0.4);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 85, 0, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: var(--accent-color);
     }
 
-    .lure-module:hover::before {
-      opacity: 1;
-    }
-
-    /* Image Display Area with Sonar Scanlines */
     .module-display {
-      height: 260px;
-      background-color: #050508;
-      background-image: 
-        radial-gradient(circle at center, rgba(255, 85, 0, 0.1) 0%, transparent 70%),
-        repeating-linear-gradient(rgba(255, 255, 255, 0.003) 0px, rgba(255, 255, 255, 0.003) 1px, transparent 1px, transparent 4px);
+      height: 280px;
+      background-color: var(--bg-deep);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 30px;
       position: relative;
-      border-bottom: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dim);
       overflow: hidden;
-    }
-
-    /* Hexagon decoration in display */
-    .module-display::before {
-      content: "";
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      border: 1px dashed rgba(255, 85, 0, 0.15);
-      border-radius: 50%;
-      animation: rotate-radar 20s linear infinite;
-    }
-
-    @keyframes rotate-radar {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
     }
 
     .cat-badge {
       position: absolute;
-      left: 16px;
-      top: 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      color: var(--neon-cyan);
-      border: 1px solid rgba(0, 240, 255, 0.3);
-      background: rgba(0, 240, 255, 0.05);
-      padding: 4px 10px;
-      border-radius: 3px;
+      left: 20px;
+      top: 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      border: 1px solid var(--border-dim);
+      background: var(--white);
+      padding: 6px 12px;
+      border-radius: 20px;
       z-index: 15;
     }
 
     .new-release-tag {
       position: absolute;
-      right: -32px;
-      top: 16px;
+      right: 20px;
+      top: 20px;
       background: var(--orange);
       color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 0.1em;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
-      padding: 6px 36px;
-      transform: rotate(45deg);
-      box-shadow: 0 4px 10px var(--orange-glow);
+      padding: 6px 12px;
+      border-radius: 4px;
       z-index: 15;
     }
 
     .module-display img {
-      max-width: 100%;
-      max-height: 170px;
+      max-width: 90%;
+      max-height: 200px;
       object-fit: contain;
-      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.7));
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+      transition: transform 0.4s ease;
       z-index: 5;
     }
 
     .lure-module:hover .module-display img {
-      transform: scale(1.1) translateY(-4px) rotate(-2deg);
+      transform: scale(1.05);
     }
 
-    /* Core details and tables */
     .module-body {
       padding: 24px;
       flex-grow: 1;
@@ -442,32 +333,30 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       gap: 10px;
     }
 
     .module-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
-      font-weight: 900;
-      font-style: italic;
+      font-size: 20px;
+      font-weight: 800;
       text-transform: uppercase;
-      color: var(--white);
-      letter-spacing: -0.02em;
+      color: var(--accent-color);
+      letter-spacing: -0.01em;
     }
 
-    /* Matrix Specs Table */
     .spec-matrix {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
       flex-grow: 1;
     }
 
     .spec-row {
       border: 1px solid var(--border-dim);
-      border-radius: 4px;
-      background: rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      background: var(--white);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -475,13 +364,13 @@
     }
 
     .spec-row.wholesale-highlight {
-      border-color: rgba(0, 240, 255, 0.2);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 240, 255, 0.01) 100%);
+      border-color: var(--accent-color);
+      background: #FAFAFA;
     }
 
     .spec-row-header {
-      padding: 8px 12px;
-      background: rgba(255, 255, 255, 0.01);
+      padding: 10px 16px;
+      background: var(--bg-deep);
       border-bottom: 1px solid var(--border-dim);
       display: flex;
       justify-content: space-between;
@@ -489,51 +378,50 @@
     }
 
     .spec-row.wholesale-highlight .spec-row-header {
-      border-bottom-color: rgba(0, 240, 255, 0.15);
-      background: rgba(0, 240, 255, 0.02);
+      background: var(--accent-color);
     }
 
     .spec-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 9px;
-      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.05em;
-      color: var(--orange);
+      color: var(--text-muted);
       text-transform: uppercase;
     }
 
     .spec-row.wholesale-highlight .spec-label {
-      color: var(--neon-cyan);
+      color: var(--white);
     }
 
     .discount-badge {
-      font-family: 'Space Mono', monospace;
-      font-size: 8px;
-      font-weight: 700;
-      color: var(--neon-green);
-      background: rgba(57, 255, 20, 0.08);
-      padding: 2px 6px;
-      border-radius: 2px;
-      border: 1px solid rgba(57, 255, 20, 0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--orange);
+      background: rgba(255, 85, 0, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
     }
 
     .spec-rows-container {
-      padding: 8px 12px;
+      padding: 12px 16px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 10px;
     }
 
     .matrix-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
     }
 
     .matrix-desc {
-      color: var(--text-muted);
+      color: var(--text-main);
+      font-weight: 500;
     }
 
     .matrix-prices {
@@ -543,112 +431,117 @@
     }
 
     .price-total {
-      font-weight: 700;
-      color: var(--white);
+      font-weight: 800;
+      color: var(--accent-color);
+      font-size: 14px;
     }
 
     .spec-row.wholesale-highlight .price-total {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      color: var(--accent-color);
     }
 
     .price-unit {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-muted);
-      margin-top: 1px;
+      margin-top: 2px;
+      font-weight: 500;
     }
 
-    .spec-row.wholesale-highlight .price-unit {
-      color: var(--neon-green);
-    }
-
-    /* Deploy button (militar style) */
     .deploy-btn {
       margin-top: 24px;
-      height: 48px;
-      background: transparent;
-      border: 1px solid var(--orange);
+      height: 50px;
+      background: var(--accent-color);
+      border: none;
+      border-radius: 8px;
       color: var(--white);
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .deploy-btn::before {
-      content: "";
-      position: absolute;
-      top: 0; left: -100%; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 85, 0, 0.2), transparent);
-      transition: all 0.6s ease;
-    }
-
-    .deploy-btn:hover::before {
-      left: 100%;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
     }
 
     .deploy-btn:hover {
       background: var(--orange);
-      box-shadow: 0 0 20px var(--orange-glow);
-      border-color: var(--orange);
+      transform: translateY(-2px);
     }
 
     .deploy-btn svg {
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       stroke-width: 2.5px;
     }
 
     .empty-state {
       grid-column: 1 / -1;
-      border: 1px dashed var(--border-dim);
-      background: rgba(255, 255, 255, 0.005);
-      border-radius: 4px;
+      border: 2px dashed var(--border-dim);
+      background: var(--white);
+      border-radius: 12px;
       padding: 80px 40px;
       text-align: center;
-      font-family: 'Space Mono', monospace;
+      font-family: 'Inter', sans-serif;
     }
 
     .empty-state h4 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
-      color: var(--orange);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent-color);
       text-transform: uppercase;
       margin-bottom: 12px;
     }
 
     .empty-state p {
       color: var(--text-muted);
-      font-size: 13px;
+      font-size: 15px;
     }
 
     /* --- RESPONSIVIDADE --- */
     @media (max-width: 1024px) {
       .dashboard {
-        flex-direction: column;
-      }
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100vw;
+    }
       .control-center {
-        width: 100%;
-        position: relative;
-        height: auto;
-        border-right: none;
-        border-bottom: 2px solid var(--border-dim);
-        padding: 30px 20px;
-      }
+      width: 100%;
+      background-color: var(--bg-panel);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .header-top-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+    }
+    .header-bottom-row {
+      width: 100%;
+    }
+    
       .tactical-grid-area {
-        margin-left: 0;
-        width: 100%;
-        padding: 30px 20px;
-      }
+      margin-left: 0;
+      width: 100%;
+      padding: 40px 50px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
     }
 
     @media (max-width: 580px) {
@@ -656,62 +549,156 @@
         grid-template-columns: 1fr;
       }
       .dashboard-title {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
-  </style>
+
+  
+    /* Cores Section */
+    .colors-section {
+      margin-bottom: 50px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+    }
+    .colors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 20px;
+    }
+    .color-swatch-card {
+      background: var(--bg-module);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .color-swatch-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-color: var(--orange);
+    }
+    .color-swatch-img {
+      height: 100px; background-color: #fff; background-position: center;
+      background-size: contain; background-repeat: no-repeat;
+      background-position: center;
+    }
+    .color-swatch-name {
+      padding: 12px 8px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    
+</style>
 </head>
 <body>
   
   <div class="dashboard">
     <!-- BARRA LATERAL TÃTICA (CONTROLE) -->
-    <aside class="control-center">
-      <div class="brand-section">
-        <a href="https://mlxjack.github.io/cat-logos-chumbada-oficial/#catalogos" style="text-decoration:none;">
-          <div class="system-label"><span>BACK TO INDEX</span></div>
-        </a>
-        <img class="dashboard-logo" src="assets/images/CHUMBADA-OFICIAL.png" alt="Chumbada Oficial">
-        <h2 class="dashboard-title">TACTICAL // <span>ARSENAL</span></h2>
+    <header class="control-center">
+      <div class="header-top-row">
+        <div class="brand-section">
+          <a href="https://mlxjack.github.io/cat-logos-chumbada-oficial/#catalogos" style="text-decoration:none;">
+            <div class="system-label"><span>VOLTAR AO INÍCIO</span></div>
+          </a>
+          <img class="dashboard-logo" src="assets/images/CHUMBADA-OFICIAL.png" alt="Chumbada Oficial">
+          <h2 class="dashboard-title">CATÁLOGO // <span>PRODUTOS</span></h2>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-station">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input id="searchInput" class="search-input" type="text" placeholder="BUSCAR PRODUTO...">
+          </div>
+        </div>
       </div>
 
-      <!-- PAINEL DE FILTRAGEM -->
-      <div class="search-panel">
-        <div class="panel-label">Busca Sonar</div>
-        <div class="search-station">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <input id="searchInput" class="search-input" type="text" placeholder="LOCALIZAR TARGET...">
+      <div class="header-bottom-row">
+        <div class="radar-channels">
+          <div id="chips" style="display:flex; flex-direction:row; gap:10px; flex-wrap:wrap; padding-bottom:5px;"></div>
         </div>
       </div>
-
-      <!-- CANAIS DO RADAR (CATEGORIAS) -->
-      <div class="radar-channels">
-        <div class="panel-label">Canais Sonar</div>
-        <div id="chips"></div>
-      </div>
-
-      <!-- DIAGNÃ“STICO DO SISTEMA -->
-      <div class="diagnostic-panel">
-        <div class="diagnostic-line">
-          <span>CONSOLE STATUS:</span>
-          <span class="status-active">ONLINE</span>
-        </div>
-        <div class="diagnostic-line">
-          <span>LATENCY SPEED:</span>
-          <span>4ms</span>
-        </div>
-        <div class="diagnostic-line">
-          <span>SYSTEM RADAR:</span>
-          <span id="diagScan">ACTIVE (62 TARGETS)</span>
-        </div>
-      </div>
-    </aside>
+    </header>
 
     <!-- ÃREA DA GRADE TÃTICA -->
     <main class="tactical-grid-area">
+      
+      <div class="colors-section">
+        <h3 class="section-title">OPÇÕES DE CORES DISPONÍVEIS</h3>
+        <div class="colors-grid">
+          
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Branco-perola.jpg')"></div>
+        <div class="color-swatch-name">Branco Perola</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Capim-Rubi.jpg')"></div>
+        <div class="color-swatch-name">Capim Rubi</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Glow.jpg')"></div>
+        <div class="color-swatch-name">Glow</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Rapadura.jpg')"></div>
+        <div class="color-swatch-name">Rapadura</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Roxo-Estrelnar.jpg')"></div>
+        <div class="color-swatch-name">Roxo Estrelnar</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Verde neon.jpg')"></div>
+        <div class="color-swatch-name">Verde Neon</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Vermelho-Holográfico.jpg')"></div>
+        <div class="color-swatch-name">Vermelho Holográfico</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/Véu-da-Noite.jpg')"></div>
+        <div class="color-swatch-name">Véu Da Noite</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/amarelo-neon.jpg')"></div>
+        <div class="color-swatch-name">Amarelo Neon</div>
+      </div>
+    
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/laranja-Neon.png')"></div>
+        <div class="color-swatch-name">Laranja Neon</div>
+      </div>
+    
+  
+      <div class="color-swatch-card">
+        <div class="color-swatch-img" style="background-image: url('assets/cores/preto-brilhante.png')"></div>
+        <div class="color-swatch-name">Preto Brilhante</div>
+      </div>
+        </div>
+      </div>
+
       <div class="top-telemetry-bar">
-        <div id="count" class="results-telemetry">TARGETS // LOADING...</div>
+        <div id="count" class="results-telemetry">PRODUTOS // CARREGANDO...</div>
       </div>
 
       <div id="grid" class="grid"></div>
@@ -1197,7 +1184,7 @@
           }
         });
         if (maxSavings > 0) {
-          headBadge = `<span class="discount-badge">ECONOMIA DE ATÃ‰ ${maxSavings}%</span>`;
+          headBadge = `<span class="discount-badge">ECONOMIA DE ATÉ ${maxSavings}%</span>`;
         }
       }
 
@@ -1218,8 +1205,8 @@
     function renderChips() {
       chips.innerHTML = categories.map(cat => `
         <button class="channel-btn ${cat === activeCategory ? 'active' : ''}" data-cat="${cat}">
-          <span>// ${cat.toUpperCase()}</span>
-          <span class="channel-indicator"></span>
+          <span>${cat.toUpperCase()}</span>
+          
         </button>
       `).join('');
       
@@ -1272,8 +1259,8 @@
         return matchCategory && matchTerm;
       });
 
-      count.textContent = `TARGETS FOUND // ${filtered.length.toString().padStart(2, '0')} DETECTED`;
-      diagScan.textContent = `ACTIVE (${filtered.length} TARGETS)`;
+      count.textContent = `${filtered.length.toString().padStart(2, "0")} PRODUTOS ENCONTRADOS`;
+      
 
       if (filtered.length === 0) {
         grid.innerHTML = `
@@ -1287,8 +1274,8 @@
       grid.innerHTML = filtered.map(product => `
         <article class="lure-module">
           <div class="module-display">
-            <div class="cat-badge"><span>${product.categories.length > 0 ? product.categories[0].toUpperCase() : 'SOFT BAIT'}</span></div>
-            ${product.isNew ? '<div class="new-release-tag"><span>LAUNCH</span></div>' : ''}
+            <div class="cat-badge"><span>${product.categories.length > 0 ? product.categories[0].toUpperCase() : 'ISCA'}</span></div>
+            ${product.isNew ? '<div class="new-release-tag"><span>NOVO</span></div>' : ''}
             <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/images/placeholder.svg'">
           </div>
           <div class="module-body">
@@ -1306,7 +1293,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              DEPLOY // VER NA LOJA
+              VER NA LOJA
             </a>
           </div>
         </article>
