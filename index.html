@@ -365,6 +365,18 @@
       letter-spacing: -0.01em;
     }
 
+    .size-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      background: rgba(255, 85, 0, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
     .spec-matrix {
       display: flex;
       flex-direction: column;
@@ -1235,6 +1247,20 @@
       });
     }
 
+    // RETORNA O TEXTO DA TAG DE TAMANHO DA ISCA
+    function getSizeRangeText(product) {
+      let sizes = [];
+      const allItems = [...(product.packs || []), ...(product.kit20 || []), ...(product.kit100 || [])];
+      allItems.forEach(item => {
+        const match = item.desc.match(/^([\d.]+)\s*cm/i);
+        if (match) sizes.push(parseFloat(match[1]));
+      });
+      if (sizes.length === 0) return '';
+      sizes = [...new Set(sizes)].sort((a, b) => a - b);
+      if (sizes.length === 1) return `Tamanho: ${sizes[0]}cm`;
+      return `De ${sizes[0]}cm até ${sizes[sizes.length - 1]}cm`;
+    }
+
     // RENDERIZAR CENTRAL DE ISCAS
     function render() {
       const term = searchInput.value.trim().toLowerCase();
@@ -1297,6 +1323,7 @@
           <div class="module-body">
             <div class="module-header">
               <h3 class="module-title">${product.name}</h3>
+              ${getSizeRangeText(product) ? `<div class="size-tag">${getSizeRangeText(product)}</div>` : ''}
             </div>
             
             <div class="spec-matrix">
